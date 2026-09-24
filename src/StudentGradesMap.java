@@ -37,6 +37,29 @@ public class StudentGradesMap {
             } else {
                 IO.println("Student ID not found.");
             }
+
+            double total = 0;
+            for (double grade : studentGrades.values()) {
+                total += grade;
+            }
+
+            double average = studentGrades.isEmpty() ? 0 : total / studentGrades.size();
+
+            String classification;
+            if (average < 60) {
+                classification = "Needs Improvement";
+            } else if (average <= 84) {
+                classification = "Good Performance";
+            } else {
+                classification = "Excellent Performance";
+            }
+
+            IO.println("\nTotal student records: " + studentGrades.size());
+            IO.println("All student IDs and grades: " + studentGrades);
+            IO.println("Average grade: " + average);
+            IO.println("Class performance classification: " + classification);
         }
+
+        input.close();
     }
 }
