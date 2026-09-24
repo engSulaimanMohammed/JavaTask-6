@@ -40,6 +40,23 @@ public class LibraryBookTracker {
             } else {
                 IO.println("Book not found.");
             }
+
+            String classification;
+            if (books.size() < 5) {
+                classification = "Small Library";
+            } else if (books.size() <= 10) {
+                classification = "Medium Library";
+            } else {
+                classification = "Large Library";
+            }
+
+            IO.println("\nTotal book records entered: " + numberOfBooks);
+            IO.println("Total unique books: " + books.size());
+            IO.println("All book IDs: " + bookIds);
+            IO.println("All book IDs with titles: " + books);
+            IO.println("Library classification: " + classification);
         }
+
+        input.close();
     }
 }
