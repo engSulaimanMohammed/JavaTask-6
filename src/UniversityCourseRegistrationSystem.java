@@ -55,6 +55,75 @@ public class UniversityCourseRegistrationSystem {
             IO.print("Choose: ");
             choice = input.nextInt();
             input.nextLine();
+
+            switch (choice) {
+                case 1:
+                    IO.print("Enter student ID: ");
+                    int searchId = input.nextInt();
+                    input.nextLine();
+
+                    if (registrations.containsKey(searchId)) {
+                        IO.println("Courses: " + registrations.get(searchId));
+                    } else {
+                        IO.println("Student not found.");
+                    }
+                    break;
+
+                case 2:
+                    IO.print("Enter student ID: ");
+                    int addId = input.nextInt();
+                    input.nextLine();
+
+                    if (registrations.containsKey(addId)) {
+                        IO.print("Enter course name: ");
+                        String newCourse = input.nextLine();
+
+                        if (registrations.get(addId).add(newCourse)) {
+                            IO.println("Course added successfully.");
+                        } else {
+                            IO.println("Course already registered.");
+                        }
+                    } else {
+                        IO.println("Student not found.");
+                    }
+                    break;
+
+                case 3:
+                    IO.print("Enter student ID: ");
+                    int removeId = input.nextInt();
+                    input.nextLine();
+
+                    if (registrations.containsKey(removeId)) {
+                        IO.print("Enter course name: ");
+                        String courseToRemove = input.nextLine();
+
+                        if (registrations.get(removeId).remove(courseToRemove)) {
+                            IO.println("Course removed successfully.");
+                        } else {
+                            IO.println("Course not found.");
+                        }
+                    } else {
+                        IO.println("Student not found.");
+                    }
+                    break;
+
+                case 4:
+                    for (int id : registrations.keySet()) {
+                        IO.println("Student ID: " + id + " | Courses: " + registrations.get(id));
+                    }
+                    break;
+
+                case 6:
+                    IO.println("Program ended.");
+                    break;
+
+                default:
+                    if (choice != 5) {
+                        IO.println("Invalid choice.");
+                    }
+            }
         } while (choice != 6);
+
+        input.close();
     }
 }
