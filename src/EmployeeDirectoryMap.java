@@ -8,14 +8,14 @@ public class EmployeeDirectoryMap {
         HashMap<Integer, String> employees = new HashMap<>();
         IO.print("Enter The Employee Number: ");
         int EmployeeNum = scanner.nextInt();
-        scanner.nextLine();  // So important don't forget it.
+        scanner.nextLine();
         if (EmployeeNum <= 0) {
             IO.println("Invalid number of employees.");
         } else {
             for (int i = 0; i < EmployeeNum; i++) {
                 IO.print("Enter The Employee ID: ");
                 int EmployeeID = scanner.nextInt();
-                scanner.nextLine();  // So important don't forget it.
+                scanner.nextLine();
 
                 if (employees.containsKey(EmployeeID)) {
                     IO.println("Employee ID already exists. Please enter a unique ID.");
