@@ -19,6 +19,17 @@ public class StudentSetManager {
                     IO.println("Duplicate ID detected. ID was not added.");
                 }
             }
+
+            int uniqueCount = StudentIDs.size();
+            String Classification;
+
+            if (uniqueCount < 5) {
+                Classification = "Small Registration";
+            } else if (uniqueCount <= 10) {
+                Classification = "Medium Registration";
+            } else {
+                Classification = "Large Registration";
+            }
         }
     }
 }
