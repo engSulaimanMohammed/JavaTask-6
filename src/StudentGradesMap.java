@@ -11,6 +11,20 @@ public class StudentGradesMap {
 
         if (numberOfStudents <= 0) {
             IO.println("Invalid number of students.");
+        } else {
+            for (int i = 0; i < numberOfStudents; i++) {
+                IO.print("Enter student ID: ");
+                int studentId = input.nextInt();
+
+                IO.print("Enter grade: ");
+                double grade = input.nextDouble();
+
+                if (studentGrades.containsKey(studentId)) {
+                    IO.println("Student ID already exists. Record not added.");
+                } else {
+                    studentGrades.put(studentId, grade);
+                }
+            }
         }
     }
 }
