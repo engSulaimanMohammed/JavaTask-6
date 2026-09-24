@@ -21,6 +21,16 @@ public class CityDirectorySet {
                     IO.println("City already exists. Duplicate entries are not allowed.");
                 }
             }
+
+            IO.println("Enter The City Name To Search For: ");
+            String SearchedName = scanner.nextLine();
+            boolean CityFound = Cities.contains(SearchedName);
+
+            if (CityFound) {
+                IO.println("City found in the directory.");
+            } else {
+                IO.println("City not found in the directory.");
+            }
         }
     }
 }
