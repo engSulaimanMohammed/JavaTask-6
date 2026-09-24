@@ -30,6 +30,17 @@ public class ProductInventorySet {
             } else {
                 IO.println("Product not found in inventory.");
             }
+
+            int uniqueProductCount = Products.size();
+            String Classification;
+
+            if (uniqueProductCount < 5) {
+                Classification = "Small Inventory";
+            } else if (uniqueProductCount <= 10) {
+                Classification = "Medium Inventory";
+            } else {
+                Classification = "Large Inventory";
+            }
         }
     }
 }
