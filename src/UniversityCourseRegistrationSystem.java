@@ -113,14 +113,45 @@ public class UniversityCourseRegistrationSystem {
                     }
                     break;
 
+                case 5:
+                    int totalCourses = 0;
+                    int highestId = -1;
+                    int lowestId = -1;
+                    int highestCount = -1;
+                    int lowestCount = Integer.MAX_VALUE;
+
+                    for (int id : registrations.keySet()) {
+                        int count = registrations.get(id).size();
+                        totalCourses += count;
+
+                        if (count > highestCount) {
+                            highestCount = count;
+                            highestId = id;
+                        }
+
+                        if (count < lowestCount) {
+                            lowestCount = count;
+                            lowestId = id;
+                        }
+                    }
+
+                    double average = registrations.isEmpty()
+                            ? 0
+                            : (double) totalCourses / registrations.size();
+
+                    IO.println("Total students: " + registrations.size());
+                    IO.println("Total course registrations: " + totalCourses);
+                    IO.println("Student with highest courses: " + highestId);
+                    IO.println("Student with lowest courses: " + lowestId);
+                    IO.println("Average courses per student: " + average);
+                    break;
+
                 case 6:
                     IO.println("Program ended.");
                     break;
 
                 default:
-                    if (choice != 5) {
-                        IO.println("Invalid choice.");
-                    }
+                    IO.println("Invalid choice.");
             }
         } while (choice != 6);
 
