@@ -15,5 +15,19 @@ public class StudentAttendanceManager {
             input.close();
             return;
         }
+
+        for (int i = 0; i < numberOfStudents; i++) {
+            IO.print("Enter student ID: ");
+            int studentId = input.nextInt();
+
+            IO.print("Enter attended days: ");
+            int days = input.nextInt();
+
+            if (attendance.containsKey(studentId)) {
+                IO.println("Student ID already exists. Record not added.");
+            } else {
+                attendance.put(studentId, days);
+            }
+        }
     }
 }
