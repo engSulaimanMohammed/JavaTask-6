@@ -44,6 +44,23 @@ public class CourseEnrollmentSystem {
             } else {
                 IO.println("Student ID not found.");
             }
+            String enrollmentClassification;
+            if (studentIds.size() < 5) {
+                enrollmentClassification = "Small Enrollment";
+            } else if (studentIds.size() <= 15) {
+                enrollmentClassification = "Medium Enrollment";
+            } else {
+                enrollmentClassification = "Large Enrollment";
+            }
+
+            IO.println("\n----- Enrollment Information -----");
+            IO.println("Total student records entered: " + numberOfStudents);
+            IO.println("Total unique students: " + studentIds.size());
+            IO.println("All student IDs: " + studentIds);
+            IO.println("All student IDs with their enrolled courses: " + studentCourses);
+            IO.println("Enrollment classification: " + enrollmentClassification);
         }
+
+        scanner.close();
     }
 }
