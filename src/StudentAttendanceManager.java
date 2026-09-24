@@ -101,14 +101,48 @@ public class StudentAttendanceManager {
                     }
                     break;
 
+                case 6:
+                    if (attendance.isEmpty()) {
+                        IO.println("No attendance records available.");
+                    } else {
+                        int totalDays = 0;
+                        int highestId = -1;
+                        int lowestId = -1;
+                        int highestDays = -1;
+                        int lowestDays = Integer.MAX_VALUE;
+
+                        for (Map.Entry<Integer, Integer> record : attendance.entrySet()) {
+                            int id = record.getKey();
+                            int days = record.getValue();
+                            totalDays += days;
+
+                            if (days > highestDays) {
+                                highestDays = days;
+                                highestId = id;
+                            }
+
+                            if (days < lowestDays) {
+                                lowestDays = days;
+                                lowestId = id;
+                            }
+                        }
+
+                        double average = (double) totalDays / attendance.size();
+
+                        IO.println("Total number of students: " + attendance.size());
+                        IO.println("Total attendance days: " + totalDays);
+                        IO.println("Average attendance: " + average);
+                        IO.println("Student with highest attendance: " + highestId + " (" + highestDays + " days)");
+                        IO.println("Student with lowest attendance: " + lowestId + " (" + lowestDays + " days)");
+                    }
+                    break;
+
                 case 7:
                     IO.println("Program ended.");
                     break;
 
                 default:
-                    if (choice != 6) {
-                        IO.println("Invalid choice.");
-                    }
+                    IO.println("Invalid choice.");
             }
         } while (choice != 7);
 
