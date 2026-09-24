@@ -30,6 +30,23 @@ public class ProductInventorySet {
             } else {
                 IO.println("Product not found in inventory.");
             }
+
+            int uniqueProductCount = Products.size();
+            String Classification;
+
+            if (uniqueProductCount < 5) {
+                Classification = "Small Inventory";
+            } else if (uniqueProductCount <= 10) {
+                Classification = "Medium Inventory";
+            } else {
+                Classification = "Large Inventory";
+            }
+
+            IO.println("\nTotal products entered: " + productnumbers);
+            IO.println("Total unique products: " + uniqueProductCount);
+            IO.println("All products in the inventory: " + Products);
+            IO.println("Search result: " + (productFound ? "Product found in inventory." : "Product not found in inventory."));
+            IO.println("Inventory classification: " + Classification);
         }
     }
 }
