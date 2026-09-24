@@ -14,6 +14,23 @@ public class CourseEnrollmentSystem {
 
         if (numberOfStudents <= 0) {
             IO.println("Invalid number of students.");
+        } else {
+            for (int i = 0; i < numberOfStudents; i++) {
+                IO.println("\nStudent " + (i + 1));
+                IO.print("Enter student ID: ");
+                int studentId = scanner.nextInt();
+                scanner.nextLine();
+
+                IO.print("Enter course name: ");
+                String courseName = scanner.nextLine();
+
+                if (studentIds.contains(studentId)) {
+                    IO.println("Student ID already exists. Record not added.");
+                } else {
+                    studentIds.add(studentId);
+                    studentCourses.put(studentId, courseName);
+                }
+            }
         }
     }
 }
