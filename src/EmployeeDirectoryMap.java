@@ -26,6 +26,16 @@ public class EmployeeDirectoryMap {
                     employees.put(EmployeeID, EmployeeName);
                 }
             }
+
+            IO.print("Enter employee ID to search for: ");
+            int searchId = scanner.nextInt();
+            String searchResult;
+
+            if (employees.containsKey(searchId)) {
+                searchResult = "Employee Found: " + employees.get(searchId);
+            } else {
+                searchResult = "Employee ID not found.";
+            }
         }
     }
 }
