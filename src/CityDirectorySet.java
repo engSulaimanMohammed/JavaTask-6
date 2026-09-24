@@ -31,6 +31,23 @@ public class CityDirectorySet {
             } else {
                 IO.println("City not found in the directory.");
             }
+
+            int UniqueCityName = Cities.size();
+            String Classfication;
+
+            if (UniqueCityName < 5) {
+                Classfication = "Small Directory";
+            } else if (UniqueCityName >= 5 && UniqueCityName <= 10) {
+                Classfication = "Medium Directory";
+            } else {
+                Classfication = " Large Directory";
+            }
+
+            IO.println("Total cities entered: " + CitiesNumber);
+            IO.println("Total unique cities: " + UniqueCityName);
+            IO.println("All cities in alphabetical order: " + Cities);
+            IO.println("Search result : " + (CityFound ? "City found in the directory." : "City not found in the directory."));
+            IO.println("Directory classification : " + Classfication);
         }
     }
 }
