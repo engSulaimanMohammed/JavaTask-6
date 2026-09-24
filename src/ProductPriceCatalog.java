@@ -14,7 +14,7 @@ public class ProductPriceCatalog {
         if (numberOfProducts <= 0) {
             IO.println("Invalid number of products.");
         } else {
-            // Add products
+
             for (int i = 0; i < numberOfProducts; i++) {
                 IO.print("Enter product name: ");
                 String productName = input.nextLine();
@@ -51,7 +51,7 @@ public class ProductPriceCatalog {
                 result = "Product not found.";
             }
 
-            // Classify inventory
+
             String classification;
             if (products.size() < 5) {
                 classification = "Small Inventory";
