@@ -16,7 +16,7 @@ public class LibraryBookTracker {
         if (numberOfBooks <= 0) {
             IO.println("Invalid number of books.");
         } else {
-            // Add books
+
             for (int i = 0; i < numberOfBooks; i++) {
                 IO.print("Enter book ID: ");
                 int bookId = input.nextInt();
@@ -43,7 +43,7 @@ public class LibraryBookTracker {
                 IO.println("Book not found.");
             }
 
-            // Classify library
+
             String classification;
             if (books.size() < 5) {
                 classification = "Small Library";
