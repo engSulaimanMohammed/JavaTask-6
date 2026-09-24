@@ -48,6 +48,23 @@ public class ProductPriceCatalog {
             } else {
                 result = "Product not found.";
             }
+
+            String classification;
+            if (products.size() < 5) {
+                classification = "Small Inventory";
+            } else if (products.size() <= 10) {
+                classification = "Medium Inventory";
+            } else {
+                classification = "Large Inventory";
+            }
+
+            IO.println("\nTotal products entered: " + numberOfProducts);
+            IO.println("Total unique products: " + products.size());
+            IO.println("All product names and prices: " + products);
+            IO.println("Search and update result: " + result);
+            IO.println("Inventory classification: " + classification);
         }
+
+        input.close();
     }
 }
