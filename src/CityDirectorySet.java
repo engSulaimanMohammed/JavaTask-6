@@ -12,6 +12,15 @@ public class CityDirectorySet {
 
         if (CitiesNumber <= 0) {
             IO.println("Invalid number of cities.");
+        } else {
+            for (int i = 0; i < CitiesNumber; i++) {
+                IO.print("Enter city name: ");
+                String CityName = scanner.nextLine();
+
+                if (!Cities.add(CityName)) {
+                    IO.println("City already exists. Duplicate entries are not allowed.");
+                }
+            }
         }
     }
 }
