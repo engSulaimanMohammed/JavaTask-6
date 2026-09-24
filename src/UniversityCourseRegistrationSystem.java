@@ -17,5 +17,31 @@ public class UniversityCourseRegistrationSystem {
             input.close();
             return;
         }
+
+        for (int i = 0; i < numberOfStudents; i++) {
+            IO.print("Enter student ID: ");
+            int studentId = input.nextInt();
+            input.nextLine();
+
+            if (studentIds.contains(studentId)) {
+                IO.println("Student ID already exists. Record skipped.");
+                continue;
+            }
+
+            studentIds.add(studentId);
+            HashSet<String> courses = new HashSet<>();
+
+            IO.print("Enter number of courses: ");
+            int numberOfCourses = input.nextInt();
+            input.nextLine();
+
+            for (int j = 0; j < numberOfCourses; j++) {
+                IO.print("Enter course name: ");
+                String courseName = input.nextLine();
+                courses.add(courseName);
+            }
+
+            registrations.put(studentId, courses);
+        }
     }
 }
