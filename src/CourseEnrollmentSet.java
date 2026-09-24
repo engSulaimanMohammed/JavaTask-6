@@ -20,6 +20,16 @@ public class CourseEnrollmentSet {
                     IO.println("Course already exists. Duplicate entries are not allowed.");
                 }
             }
+
+            IO.println("Enter the course name to remove. ");
+            String courseToRemove = scanner.next();
+            boolean courseRemoved = Courses.remove(courseToRemove);
+
+            if (courseRemoved) {
+                IO.println("Course removed successfully.");
+            } else {
+                IO.println("Course not found.");
+            }
         }
     }
 }
