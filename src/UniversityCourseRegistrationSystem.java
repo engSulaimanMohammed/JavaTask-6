@@ -7,5 +7,15 @@ public class UniversityCourseRegistrationSystem {
         Scanner input = new Scanner(System.in);
         HashSet<Integer> studentIds = new HashSet<>();
         HashMap<Integer, HashSet<String>> registrations = new HashMap<>();
+
+        IO.print("Enter number of students: ");
+        int numberOfStudents = input.nextInt();
+        input.nextLine();
+
+        if (numberOfStudents <= 0) {
+            IO.println("Invalid number of students.");
+            input.close();
+            return;
+        }
     }
 }
