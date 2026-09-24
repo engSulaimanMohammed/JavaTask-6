@@ -12,6 +12,21 @@ public class ProductPriceCatalog {
 
         if (numberOfProducts <= 0) {
             IO.println("Invalid number of products.");
+        } else {
+            for (int i = 0; i < numberOfProducts; i++) {
+                IO.print("Enter product name: ");
+                String productName = input.nextLine();
+
+                IO.print("Enter product price: ");
+                double price = input.nextDouble();
+                input.nextLine();
+
+                if (products.containsKey(productName)) {
+                    IO.println("Product already exists. Record not added.");
+                } else {
+                    products.put(productName, price);
+                }
+            }
         }
     }
 }
