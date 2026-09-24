@@ -36,6 +36,25 @@ public class EmployeeDirectoryMap {
             } else {
                 searchResult = "Employee ID not found.";
             }
+
+            int uniqueEmployeeCount = employees.size();
+            String companyClassification;
+
+            if (uniqueEmployeeCount < 5) {
+                companyClassification = "Small Company";
+            } else if (uniqueEmployeeCount <= 10) {
+                companyClassification = "Medium Company";
+            } else {
+                companyClassification = "Large Company";
+            }
+
+            IO.println("Total employee records entered: " + EmployeeNum);
+            IO.println("Total unique employees: " + uniqueEmployeeCount);
+            IO.println("All employee IDs and names: " + employees);
+            IO.println("Search result: " + searchResult);
+            IO.println("Company classification: " + companyClassification);
         }
+
+        scanner.close();
     }
 }
