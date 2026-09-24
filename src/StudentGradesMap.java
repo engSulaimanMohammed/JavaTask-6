@@ -25,6 +25,18 @@ public class StudentGradesMap {
                     studentGrades.put(studentId, grade);
                 }
             }
+
+            IO.print("Enter student ID to update: ");
+            int updateId = input.nextInt();
+
+            if (studentGrades.containsKey(updateId)) {
+                IO.print("Enter new grade: ");
+                double newGrade = input.nextDouble();
+                studentGrades.replace(updateId, newGrade);
+                IO.println("Grade updated successfully.");
+            } else {
+                IO.println("Student ID not found.");
+            }
         }
     }
 }
