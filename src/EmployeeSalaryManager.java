@@ -28,5 +28,18 @@ public class EmployeeSalaryManager {
                 employees.put(employeeId, salary);
             }
         }
+
+        int choice;
+        do {
+            IO.println("\n1. Add Employee");
+            IO.println("2. Search Employee");
+            IO.println("3. Update Salary");
+            IO.println("4. Remove Employee");
+            IO.println("5. Display All Employees");
+            IO.println("6. Display Salary Statistics");
+            IO.println("7. Exit");
+            IO.print("Choose: ");
+            choice = input.nextInt();
+        } while (choice != 7);
     }
 }
