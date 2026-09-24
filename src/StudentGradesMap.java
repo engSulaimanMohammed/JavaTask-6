@@ -13,7 +13,7 @@ public class StudentGradesMap {
         if (numberOfStudents <= 0) {
             IO.println("Invalid number of students.");
         } else {
-            // Add student grades
+
             for (int i = 0; i < numberOfStudents; i++) {
                 IO.print("Enter student ID: ");
                 int studentId = input.nextInt();
@@ -40,7 +40,7 @@ public class StudentGradesMap {
                 IO.println("Student ID not found.");
             }
 
-            // Calculate average
+
             double total = 0;
             for (double grade : studentGrades.values()) {
                 total += grade;
