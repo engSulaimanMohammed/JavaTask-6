@@ -20,6 +20,16 @@ public class ProductInventorySet {
                     IO.println("Product already exists. Duplicate entries are not allowed.");
                 }
             }
+
+            IO.print("Enter a product name to search for: ");
+            String searchProduct = scanner.next();
+            boolean productFound = Products.contains(searchProduct);
+
+            if (productFound) {
+                IO.println("Product found in inventory.");
+            } else {
+                IO.println("Product not found in inventory.");
+            }
         }
     }
 }
