@@ -30,6 +30,25 @@ public class CourseEnrollmentSet {
             } else {
                 IO.println("Course not found.");
             }
+
+            int remainingCourseCount = Courses.size();
+            String Classification;
+
+            if (remainingCourseCount < 4) {
+                Classification = "Small Course Catalog";
+            } else if (remainingCourseCount <= 8) {
+                Classification = "Medium Course Catalog";
+            } else {
+                Classification = "Large Course Catalog";
+            }
+
+            IO.println("\nTotal courses entered: " + coursenumber);
+            IO.println("Total unique courses remaining: " + remainingCourseCount);
+            IO.println("All remaining course names: " + Courses);
+            IO.println("Removal result: " + (courseRemoved ? "Course removed successfully." : "Course not found."));
+            IO.println("Course catalog classification: " + Classification);
         }
+
+        scanner.close();
     }
 }
