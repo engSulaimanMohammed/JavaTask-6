@@ -29,5 +29,18 @@ public class StudentAttendanceManager {
                 attendance.put(studentId, days);
             }
         }
+
+        int choice;
+        do {
+            IO.println("\n1. Add Student Record");
+            IO.println("2. Search Student Attendance");
+            IO.println("3. Update Attendance");
+            IO.println("4. Remove Student Record");
+            IO.println("5. Display All Attendance Records");
+            IO.println("6. Display Attendance Statistics");
+            IO.println("7. Exit");
+            IO.print("Choose: ");
+            choice = input.nextInt();
+        } while (choice != 7);
     }
 }
