@@ -43,5 +43,18 @@ public class UniversityCourseRegistrationSystem {
 
             registrations.put(studentId, courses);
         }
+
+        int choice;
+        do {
+            IO.println("\n1. Search Student");
+            IO.println("2. Add Course to Student");
+            IO.println("3. Remove Course from Student");
+            IO.println("4. Display All Students");
+            IO.println("5. Display Registration Statistics");
+            IO.println("6. Exit");
+            IO.print("Choose: ");
+            choice = input.nextInt();
+            input.nextLine();
+        } while (choice != 6);
     }
 }
