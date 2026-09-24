@@ -27,6 +27,27 @@ public class ProductPriceCatalog {
                     products.put(productName, price);
                 }
             }
+
+            IO.print("Enter product name to search: ");
+            String searchProduct = input.nextLine();
+            String result;
+
+            if (products.containsKey(searchProduct)) {
+                IO.println("Current price: " + products.get(searchProduct));
+                IO.print("Do you want to update the price? (Y/N): ");
+                String choice = input.nextLine();
+
+                if (choice.equalsIgnoreCase("Y")) {
+                    IO.print("Enter new price: ");
+                    double newPrice = input.nextDouble();
+                    products.replace(searchProduct, newPrice);
+                    result = "Price updated successfully.";
+                } else {
+                    result = "Price was not updated.";
+                }
+            } else {
+                result = "Product not found.";
+            }
         }
     }
 }
