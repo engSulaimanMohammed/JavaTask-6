@@ -99,14 +99,41 @@ public class EmployeeSalaryManager {
                     }
                     break;
 
+                case 6:
+                    if (employees.isEmpty()) {
+                        IO.println("No employees available.");
+                    } else {
+                        double highest = Double.MIN_VALUE;
+                        double lowest = Double.MAX_VALUE;
+                        double total = 0;
+
+                        for (double salary : employees.values()) {
+                            if (salary > highest) {
+                                highest = salary;
+                            }
+
+                            if (salary < lowest) {
+                                lowest = salary;
+                            }
+
+                            total += salary;
+                        }
+
+                        double average = total / employees.size();
+
+                        IO.println("Highest salary: " + highest);
+                        IO.println("Lowest salary: " + lowest);
+                        IO.println("Average salary: " + average);
+                        IO.println("Total payroll: " + total);
+                    }
+                    break;
+
                 case 7:
                     IO.println("Program ended.");
                     break;
 
                 default:
-                    if (choice != 6) {
-                        IO.println("Invalid choice.");
-                    }
+                    IO.println("Invalid choice.");
             }
         } while (choice != 7);
 
