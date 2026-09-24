@@ -31,6 +31,19 @@ public class CourseEnrollmentSystem {
                     studentCourses.put(studentId, courseName);
                 }
             }
+
+            IO.print("\nEnter student ID to update: ");
+            int updateStudentId = scanner.nextInt();
+            scanner.nextLine();
+
+            if (studentIds.contains(updateStudentId)) {
+                IO.print("Enter new course name: ");
+                String newCourseName = scanner.nextLine();
+                studentCourses.replace(updateStudentId, newCourseName);
+                IO.println("Course updated successfully.");
+            } else {
+                IO.println("Student ID not found.");
+            }
         }
     }
 }
