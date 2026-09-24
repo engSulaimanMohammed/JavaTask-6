@@ -30,6 +30,16 @@ public class LibraryBookTracker {
                     books.put(bookId, bookTitle);
                 }
             }
+
+            IO.print("Enter book ID to search: ");
+            int searchId = input.nextInt();
+
+            if (books.containsKey(searchId)) {
+                IO.println("Book ID: " + searchId);
+                IO.println("Book title: " + books.get(searchId));
+            } else {
+                IO.println("Book not found.");
+            }
         }
     }
 }
