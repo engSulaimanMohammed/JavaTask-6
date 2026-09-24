@@ -14,6 +14,22 @@ public class LibraryBookTracker {
 
         if (numberOfBooks <= 0) {
             IO.println("Invalid number of books.");
+        } else {
+            for (int i = 0; i < numberOfBooks; i++) {
+                IO.print("Enter book ID: ");
+                int bookId = input.nextInt();
+                input.nextLine();
+
+                IO.print("Enter book title: ");
+                String bookTitle = input.nextLine();
+
+                if (bookIds.contains(bookId)) {
+                    IO.println("Duplicate Book ID. Record not added.");
+                } else {
+                    bookIds.add(bookId);
+                    books.put(bookId, bookTitle);
+                }
+            }
         }
     }
 }
