@@ -12,6 +12,20 @@ public class EmployeeDirectoryMap {
 
         if (EmployeeNum <= 0) {
             IO.println("Invalid number of employees.");
+        } else {
+            for (int i = 0; i < EmployeeNum; i++) {
+                IO.print("Enter The Employee ID: ");
+                int EmployeeID = scanner.nextInt();
+                scanner.nextLine();
+
+                if (employees.containsKey(EmployeeID)) {
+                    IO.println("Employee ID already exists. Please enter a unique ID.");
+                } else {
+                    IO.print("Enter The Employee Name: ");
+                    String EmployeeName = scanner.nextLine();
+                    employees.put(EmployeeID, EmployeeName);
+                }
+            }
         }
     }
 }
