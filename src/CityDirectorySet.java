@@ -15,7 +15,7 @@ public class CityDirectorySet {
             for (int i = 0; i < CitiesNumber; i++) {
                 IO.print("Enter city name: ");
                 String CityName = scanner.nextLine();
-                if (!Cities.add(CityName)) {  // If a duplicate city name is entered
+                if (!Cities.add(CityName)) {
                     IO.println("City already exists. Duplicate entries are not allowed.");
                 }
             }
