@@ -11,6 +11,15 @@ public class ProductInventorySet {
 
         if (productnumbers <= 0) {
             IO.println("Invalid number of products.");
+        } else {
+            for (int i = 0; i < productnumbers; i++) {
+                IO.println("Enter product name: ");
+                String productnames = scanner.nextLine();
+
+                if (!Products.add(productnames)) {
+                    IO.println("Product already exists. Duplicate entries are not allowed.");
+                }
+            }
         }
     }
 }
