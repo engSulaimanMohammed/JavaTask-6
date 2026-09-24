@@ -41,6 +41,77 @@ public class StudentAttendanceManager {
             IO.println("7. Exit");
             IO.print("Choose: ");
             choice = input.nextInt();
+
+            switch (choice) {
+                case 1:
+                    IO.print("Enter student ID: ");
+                    int newId = input.nextInt();
+
+                    IO.print("Enter attended days: ");
+                    int newDays = input.nextInt();
+
+                    if (attendance.containsKey(newId)) {
+                        IO.println("Student ID already exists. Record not added.");
+                    } else {
+                        attendance.put(newId, newDays);
+                        IO.println("Student record added successfully.");
+                    }
+                    break;
+
+                case 2:
+                    IO.print("Enter student ID: ");
+                    int searchId = input.nextInt();
+
+                    if (attendance.containsKey(searchId)) {
+                        IO.println("Attendance days: " + attendance.get(searchId));
+                    } else {
+                        IO.println("Student not found.");
+                    }
+                    break;
+
+                case 3:
+                    IO.print("Enter student ID: ");
+                    int updateId = input.nextInt();
+
+                    if (attendance.containsKey(updateId)) {
+                        IO.print("Enter new attendance days: ");
+                        int days = input.nextInt();
+                        attendance.replace(updateId, days);
+                        IO.println("Attendance updated successfully.");
+                    } else {
+                        IO.println("Student not found.");
+                    }
+                    break;
+
+                case 4:
+                    IO.print("Enter student ID: ");
+                    int removeId = input.nextInt();
+
+                    if (attendance.containsKey(removeId)) {
+                        attendance.remove(removeId);
+                        IO.println("Student record removed successfully.");
+                    } else {
+                        IO.println("Student not found.");
+                    }
+                    break;
+
+                case 5:
+                    for (Map.Entry<Integer, Integer> record : attendance.entrySet()) {
+                        IO.println("Student ID: " + record.getKey() + " | Attendance days: " + record.getValue());
+                    }
+                    break;
+
+                case 7:
+                    IO.println("Program ended.");
+                    break;
+
+                default:
+                    if (choice != 6) {
+                        IO.println("Invalid choice.");
+                    }
+            }
         } while (choice != 7);
+
+        input.close();
     }
 }
