@@ -31,6 +31,13 @@ public class StudentSetManager {
             } else {
                 Classification = "Large Registration";
             }
+
+            IO.println("\nTotal IDs entered: " + NumOfStudents);
+            IO.println("Total unique student IDs: " + uniqueCount);
+            IO.println("All unique student IDs: " + StudentIDs);
+            IO.println("Registration classification: " + Classification);
         }
+
+        scanner.close();
     }
 }
